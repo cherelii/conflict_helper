@@ -24,7 +24,7 @@ def generate_prompt():
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     
     # Add user's input to conversation history
-    conversation_history.append({"role": "user", "content": f"In 200 words max, come up with perspectives of other people in the conflict and address the goal of the user, based on the input here: {user_input_history}"})
+    conversation_history.append({"role": "user", "content": f"In 200 words max, come up with perspectives of other people in the conflict and address the goal of the user, based on the input here, noted specifically what tone/perspective they would like and use that tone: {user_input_history}"})
     
     response = client.chat.completions.create(
         model="gpt-4o-mini",
